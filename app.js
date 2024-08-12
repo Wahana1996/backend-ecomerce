@@ -7,6 +7,7 @@ const path = require("path");
 const helmet = require("helmet");
 
 dotenv.config();
+app.use(cors());
 
 const app = express();
 app.use(express.json());
@@ -14,7 +15,6 @@ app.use(helmet());
 app.use(cookieParse());
 
 app.use(morgan("dev"));
-app.use(cors());
 
 app.use(
   "/public/uploads",
