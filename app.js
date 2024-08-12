@@ -7,7 +7,12 @@ const path = require("path");
 const helmet = require("helmet");
 
 dotenv.config();
-app.use(cors());
+const corsConfig = {
+  origin: "*",
+  credential: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+};
+app.use(cors(corsConfig));
 
 const app = express();
 app.use(express.json());
