@@ -35,8 +35,8 @@ app.use("/", router);
 app.use(notFoundUrl);
 app.use(errorHandler);
 
-port = 7000;
+// port = 7000;
 
-app.listen(port, () => {
-  console.log(`app sedang berjalan di port:${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`app sedang berjalan di port:${process.env.PORT}`);
 });
