@@ -7,14 +7,14 @@ const path = require("path");
 const helmet = require("helmet");
 
 dotenv.config();
-// const corsConfig = {
-//   origin: "*",
-//   credential: true,
-//   methods: ["GET", "POST", "PUT", "DELETE"],
-// };
+const corsConfig = {
+  origin: "*",
+  credential: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+};
 
 const app = express();
-app.use(cors());
+app.use(cors(corsConfig));
 app.use(express.json());
 app.use(helmet());
 app.use(cookieParse());
