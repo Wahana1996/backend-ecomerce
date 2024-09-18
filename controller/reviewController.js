@@ -1,6 +1,6 @@
 const asyncHandler = require("../middleware/asyncHandle");
 const { Review, Product } = require("../models");
-const { Sequelize, where } = require("sequelize");
+const { Sequelize } = require("sequelize");
 
 const averageDataProduct = async (idDataProduct) => {
   const resReview = await Review.findOne({
@@ -74,5 +74,3 @@ exports.createOrUpdateReview = asyncHandler(async (req, res) => {
     message: message,
   });
 });
-
-
